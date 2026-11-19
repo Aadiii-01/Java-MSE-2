@@ -1,0 +1,256 @@
+{
+  "info": {
+    "name": "Simple Student API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Add student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/students",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentId\": 108,\n  \"studentName\": \"Meera Joshi\",\n  \"email\": \"meera@example.com\",\n  \"courseName\": \"B.Tech CSE\",\n  \"programmingScore\": 82,\n  \"mathematicsScore\": 77,\n  \"technicalSkills\": [\n    \"Java\",\n    \"SQL\"\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "2. Get all students",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students"
+          ]
+        }
+      }
+    },
+    {
+      "name": "3. Get student by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/101",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "101"
+          ]
+        }
+      }
+    },
+    {
+      "name": "4. Update scores and skills",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/108",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "108"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"programmingScore\": 90,\n  \"mathematicsScore\": 80,\n  \"technicalSkills\": [\n    \"Java\",\n    \"SQL\",\n    \"Docker\"\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "5. Delete student",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/108",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "108"
+          ]
+        }
+      }
+    },
+    {
+      "name": "6. Merit list",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/merit-list",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "merit-list"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/search?id=101",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "101"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search by email",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/search?email=riya@example.com",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "riya@example.com"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search by course",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/search?course=CSE",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "course",
+              "value": "CSE"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Same skills",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/same-skills",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "same-skills"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Weak programming, maths >= 75",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/programming-support",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "programming-support"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
